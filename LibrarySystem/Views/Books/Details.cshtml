@@ -1,0 +1,30 @@
+﻿<h1 class="display-4">Book Details</h1>
+<hr />
+<br />
+@model Book
+
+<dl class="row">
+
+    <dt class="col-2">@Html.DisplayNameFor(e => e.BookTitle)</dt>
+    <dd class="col-10">@Model.BookTitle</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(e => e.Author)</dt>
+    <dd class="col-10">@Model.Author</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(e => e.Pages)</dt>
+    <dd class="col-10">@Model.Pages</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(e => e.ISBN)</dt>
+    <dd class="col-10">@Model.ISBN</dd>
+
+</dl>
+
+
+
+
+
+<a asp-action="Index">Back to List</a>
+|
+<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+|
+<a asp-action="Delete" asp-route-id="@Model.Id">Delete</a>

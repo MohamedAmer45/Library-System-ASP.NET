@@ -1,0 +1,40 @@
+﻿@model LibrarySystem.Models.Book
+
+<h1 class="display-4">Edit</h1>
+<hr />
+
+<form asp-action="Edit" class="col-4">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label asp-for="BookTitle"></label>
+        <input asp-for="BookTitle" class="form-control" />
+        <span asp-validation-for="BookTitle" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Author"></label>
+        <input asp-for="Author" class="form-control" />
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Pages"></label>
+        <input asp-for="Pages" class="form-control" />
+        <span asp-validation-for="Pages" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="ISBN"></label>
+        <input asp-for="ISBN" class="form-control" />
+        <span asp-validation-for="ISBN" class="text-danger"></span>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">Edit</button>
+
+</form>
+<a asp-action="Index">Back to List</a>

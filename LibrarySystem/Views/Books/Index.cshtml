@@ -1,0 +1,38 @@
+﻿<h1 class="display-4">Books Page</h1>
+<hr />
+<br />
+@model IEnumerable<Book>
+
+<a asp-controller="Books" asp-action="Create" class="btn btn-outline-success">Create</a>
+<br />
+
+<table class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(e => e.BookTitle)</th>
+            <th>@Html.DisplayNameFor(e => e.Author)</th>
+            <th>@Html.DisplayNameFor(e => e.Pages)</th>
+            <th>@Html.DisplayNameFor(e => e.ISBN)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.BookTitle</td>
+                <td>@item.Author</td>
+                <td>@item.Pages</td>
+                <td>@item.ISBN</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit | </a>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details | </a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+    </tfoot>
+</table>
